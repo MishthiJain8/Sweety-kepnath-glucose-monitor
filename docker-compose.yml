@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sweety
+      POSTGRES_PASSWORD: sweety_dev_password
+      POSTGRES_DB: sweety
+    ports:
+      - "5433:5432"
+    volumes:
+      - sweety_data:/var/lib/postgresql/data
+
+volumes:
+  sweety_data:
